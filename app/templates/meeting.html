@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Meeting Room</h1>
+    <p>Meeting ID: {{ meeting_id }}</p>
+    <p>Share this link: <a href="{{ url_for('meeting_routes.meeting', meeting_id=meeting_id, _external=True) }}">Join Meeting</a></p>
+    <div id="video-container">
+        <video id="local-video" autoplay></video>
+        <video id="remote-video" autoplay></video>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
